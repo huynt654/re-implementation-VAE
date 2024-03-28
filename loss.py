@@ -15,6 +15,7 @@ def loss_function(x,# pred
     KLD      = - 0.5 * torch.sum(1 + log_var - mean.pow(2) - log_var.exp())
         # log_var, mean is encoder output
 
+                    # https://stats.stackexchange.com/questions/7440/kl-divergence-between-two-univariate-gaussians
     return reproduction_loss + KLD
 
 
